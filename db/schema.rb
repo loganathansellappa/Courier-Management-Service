@@ -58,15 +58,15 @@ ActiveRecord::Schema.define(:version => 20120126203606) do
 
   create_table "customers", :force => true do |t|
     t.string   "name"
-    t.string   "mail"
+    t.string   "email"
     t.string   "street"
     t.string   "city"
     t.string   "pin"
     t.string   "state"
-    t.boolean  "from"
+    t.string   "customer_type"
+    t.integer  "customer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "to"
   end
 
   create_table "packages", :force => true do |t|
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(:version => 20120126203606) do
     t.string   "qualification"
     t.string   "designation"
     t.string   "area"
+    t.integer  "branch_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

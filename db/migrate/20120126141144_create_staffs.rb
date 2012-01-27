@@ -10,6 +10,7 @@ class CreateStaffs < ActiveRecord::Migration
       t.string :qualification
       t.string :designation
       t.string :area
+			t.integer :branch_id
       t.timestamps
     end
   end
