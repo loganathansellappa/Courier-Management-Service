@@ -1,4 +1,10 @@
 Courier::Application.routes.draw do
+	#~ root :to => "active_admin/devise/sessions#new"
+	
+	#~ devise_scope :user do 
+		#~ root :to => "active_admin/devise/sessions#new"
+
+#~ end
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -57,11 +63,14 @@ Courier::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
-
+devise_for :admin_users do
+  get "/" => "active_admin/devise/sessions#new" :
+end
+# You can have the root of your site routed with "root"
+  #~ # just remember to delete public/index.html.
+	#~ devise_scope :admin_users do 
+		#~ root :to => "active_admin/devise/sessions#new"
+  #~ end
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
