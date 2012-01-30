@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120126203606) do
+ActiveRecord::Schema.define(:version => 20120130091628) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -56,25 +56,37 @@ ActiveRecord::Schema.define(:version => 20120126203606) do
     t.datetime "updated_at"
   end
 
-  create_table "customers", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "street"
-    t.string   "city"
-    t.string   "pin"
-    t.string   "state"
-    t.string   "customer_type"
-    t.integer  "customer_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "packages", :force => true do |t|
-    t.integer  "customer_id"
+    t.integer  "sender_id"
     t.string   "type"
     t.string   "weight"
     t.string   "amount"
     t.date     "received_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "receivers", :force => true do |t|
+    t.string   "billno"
+    t.string   "name"
+    t.string   "email"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "pin"
+    t.integer  "sender_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "senders", :force => true do |t|
+    t.string   "billno"
+    t.string   "name"
+    t.string   "email"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "pin"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

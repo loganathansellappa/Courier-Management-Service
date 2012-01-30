@@ -1,4 +1,10 @@
 Courier::Application.routes.draw do
+  resources :people
+
+  resources :receivers
+
+  resources :senders
+
 	#~ root :to => "active_admin/devise/sessions#new"
 	
 	#~ devise_scope :user do 
