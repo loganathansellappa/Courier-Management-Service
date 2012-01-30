@@ -1,0 +1,2 @@
+class SendersController < ApplicationController
+end
