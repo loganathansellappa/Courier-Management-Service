@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
-#gem 'mysql2'
+gem 'mysql2'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 gem 'activeadmin'
@@ -18,7 +18,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
  gem 'therubyracer'
-gem 'pg'
 
 gem 'jquery-rails'
 
@@ -34,7 +33,8 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-group :test do
+group :production do
   # Pretty printed test output
-  gem 'turn', '0.8.2', :require => false
+  gem 'pg'
+  #gem 'turn', '0.8.2', :require => false
 end
