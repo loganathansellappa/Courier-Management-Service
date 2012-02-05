@@ -32,4 +32,9 @@ ActiveAdmin.register Sender do
 		end
     f.buttons
   end
+
+   create do
+	  sender=Sender.find_by_id(params[:id])
+		render :partial => "sender_details",:locals=>{:sender=>sender}
+	end
 end
